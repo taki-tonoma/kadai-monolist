@@ -1,0 +1,8 @@
+<div class="bg-secondary p-3 p-sm-5 my-4 rounded">
+  <div class="text-center text-white">
+    <h1>ようこそMonolistへ</h1>
+    <%= link_to 'Monolistを始める', signup_path, class: 'btn btn-success btn-lg' %>
+  </div>
+</div>
+
+<%= render 'items/items', items: @items %>
