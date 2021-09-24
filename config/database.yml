@@ -50,6 +50,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: monolist_production
   username: monolist
   password: <%= ENV['MONOLIST_DATABASE_PASSWORD'] %>
