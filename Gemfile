@@ -43,3 +43,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 楽天 Rubyライブラリ
+gem 'rakuten_web_service'
+
+# 環境変数用ライブラリ
+gem 'dotenv-rails'
+

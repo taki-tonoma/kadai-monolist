@@ -1,0 +1,28 @@
+<h1><%= type %>ランキング</h1>
+<% if items.present? %>
+  <div class="row">
+    <% items.each_with_index do |item, index| %>
+      <!--<div class="item">-->
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="card card-default">
+            <div class="card-header text-center">
+              <%= image_tag item.image_url, alt: item.name, style: "width:100%;" %>
+            </div>
+            <div class="card-body">
+              <p class="card-title"><%= link_to item.name, item %></p>
+              <div class="buttons text-center">
+                <% if logged_in? %>
+                <div class="d-inline-block"><%= render 'ownerships/want_button', item: item %></div>
+                <div class="d-inline-block"><%= render 'ownerships/have_button', item: item %></div>
+                <% end %>
+              </div>
+            </div>
+            <div class="card-footer">
+              <p class="text-center"><%= index+1 %>位: <%= ranking_counts[item.id] %> <%= type %>s</p>
+            </div>
+          </div>
+        </div>
+      <!--</div>-->
+    <% end %>
+  </div>
+<% end %>
