@@ -1,13 +1,13 @@
 <% if current_user.have?(item) %>
   <%= form_with(url: ownership_path(item.id), method: :delete) do |f| %>
-    <%= hidden_field_tag :item_id, item.id %>
-    <%= hidden_field_tag :type, 'Have' %>
+    <%= hidden_field_tag :item_id, item.id, id: "have_id_#{item.id}" %>
+    <%= hidden_field_tag :type, 'Have', id: "have_type_#{item.id}" %>
     <%= f.submit 'Have', class: 'btn btn-success' %>
   <% end %>
 <% else %>
   <%= form_with(url: ownerships_path) do |f| %>
-    <%= hidden_field_tag :item_code, item.code %>
-    <%= hidden_field_tag :type, 'Have' %>
+    <%= hidden_field_tag :item_code, item.code, id: "have_id_#{item.id}" %>
+    <%= hidden_field_tag :type, 'Have', id: "have_type_#{item.id}" %>
     <%= f.submit 'Have it', class: 'btn btn-primary' %>
   <% end %>
 <% end %>

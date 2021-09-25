@@ -1,16 +1,12 @@
-  <div class="col-md-6 mx-auto text-center">
-    <form class="form-noborder">
-      <div class="row mb-5 justify-content-center">
-        <%= form_with(url: new_item_path, method: :get, class: 'col-auto') do |f| %>
-          <div class="col-lg-8 col-sm-12 form-group">
-            <%= text_field_tag :keyword, @keyword, class: 'form-control input-lg', placeholder: "キーワードを入力", size: 40 %>
-          </div>
-          <div class="col-lg-3 col-sm-12 form-group">
-            <%= f.submit '商品を検索', class: 'btn btn-success' %>            
-          </div>
-        <% end %>
-      </div>
-    </form>
+<%= form_with(url: new_item_path, method: :get) do |f| %>
+  <div class="row">
+    <div class="col-lg-8 col-sm-12">
+      <%= text_field_tag :keyword, @keyword, class: 'form-control input-lg', placeholder: "キーワードを入力", size: 40 %>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <%= f.submit '商品を検索', class: 'btn btn-success' %>     
+    </div>
   </div>
+<% end %>
 
 <%= render 'items', items: @items %>
