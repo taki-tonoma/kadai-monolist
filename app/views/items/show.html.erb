@@ -3,7 +3,7 @@
     <div class="item">
       <div class="card card-default">
         <div class="card-header text-center">
-          <img src="<%= @item.image_url %>" alt="">
+          <%= image_tag @item.image_url, alt: @item.name, style: "width:50%;" %>
         </div>
         <div class="card-body">
           <p class="item-title"><%= @item.name %></p>
